@@ -14,7 +14,7 @@ try{
     echo"Database created";
 }catch(Exception $e){
 
-    echo " Something went wrong ";
+    echo " Something went wrong! ";
 }
 
 ?>
