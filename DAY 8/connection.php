@@ -1,15 +1,22 @@
 <?php
     try{
-        $pdo = new PDO("mysql:host=localhost;dbname=database", "root", "");
+        $pdo = new PDO("mysql:host=localhost;dbname=Agon", "root", "");
 
-        $username = "Ariana";
-        $password = password_hash("mypassword", PASSWORD_DEFAULT);
+        // $username = "Ariana";
+        // $password = password_hash("mypassword", PASSWORD_DEFAULT);
+        // $email = "test@gmail.com";
 
-        $sql = "INSERT INTO users(username,password) VALUES ("$username", "$password")";
+        // $sql = "INSERT INTO users(username,password,email) VALUES ('$username', '$password', '$email')";
 
+        // $sql= "ALTER table users ADD eamil VARCHAR(255)";
+
+        $sql = "ALTER table users DROP COLUMN eamil";
+
+        // $sql = "DROP TABLE PRODUCTS";
+      
         $pdo->exec($sql);
 
-        echo "New record created succssefully";
+        echo "New Tabel deleted succssefully";
     }catch(DOExecption $e){
         echo $e->getMessage();
     }
