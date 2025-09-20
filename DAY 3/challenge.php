@@ -9,10 +9,10 @@ function modulo($n){
     }
 }
 
-echo (modulo(5),"<br>");
-echo (modulo(8),"<br>");
-echo (modulo(10),"<br>");
-echo (modulo(7),"<br>");
-echo (modulo(3),"<br>");
+echo modulo(5) . "<br>";
+echo modulo(8) . "<br>";
+echo modulo(10) . "<br>";
+echo modulo(7) . "<br>";
+echo modulo(3) . "<br>";
 
 ?>
