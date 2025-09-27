@@ -1,30 +1,5 @@
--- phpMyAdmin SQL Dump
--- version 4.2.11
--- http://www.phpmyadmin.net
---
--- Host: 127.0.0.1
--- Generation Time: Jul 03, 2018 at 05:19 PM
--- Server version: 5.6.21
--- PHP Version: 5.6.3
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-
---
--- Database: `paysystem`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `branch`
---
 
 CREATE TABLE IF NOT EXISTS `branch` (
 `id` int(255) NOT NULL,
@@ -34,9 +9,6 @@ CREATE TABLE IF NOT EXISTS `branch` (
   `delete_status` enum('0','1') NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `branch`
---
 
 INSERT INTO `branch` (`id`, `branch`, `address`, `detail`, `delete_status`) VALUES
 (1, 'Swindon Branch', '1788 Traction Street', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', '0'),
@@ -45,11 +17,6 @@ INSERT INTO `branch` (`id`, `branch`, `address`, `detail`, `delete_status`) VALU
 (4, 'Marion Cross School', '22 Church St, Norwich', 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.', '0'),
 (5, 'Birmingham', '22nd St S, Birmingham', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.', '0');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `fees_transaction`
---
 
 CREATE TABLE IF NOT EXISTS `fees_transaction` (
 `id` int(255) NOT NULL,
@@ -59,9 +26,6 @@ CREATE TABLE IF NOT EXISTS `fees_transaction` (
   `transcation_remark` text NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `fees_transaction`
---
 
 INSERT INTO `fees_transaction` (`id`, `stdid`, `paid`, `submitdate`, `transcation_remark`) VALUES
 (1, '1', 100, '2017-11-01 00:00:00', ''),
@@ -75,11 +39,6 @@ INSERT INTO `fees_transaction` (`id`, `stdid`, `paid`, `submitdate`, `transcatio
 (9, '8', 5000, '2017-01-03 00:00:00', 'DEMO'),
 (10, '9', 2500, '2018-03-02 00:00:00', 'DEMO');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `student`
---
 
 CREATE TABLE IF NOT EXISTS `student` (
 `id` int(255) NOT NULL,
@@ -94,9 +53,6 @@ CREATE TABLE IF NOT EXISTS `student` (
   `delete_status` enum('0','1') NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `student`
---
 
 INSERT INTO `student` (`id`, `emailid`, `sname`, `joindate`, `about`, `contact`, `fees`, `branch`, `balance`, `delete_status`) VALUES
 (1, 'PaigeDoherty@gmail.com', 'Paige Doherty', '2017-11-01 00:00:00', 'Loreim Ipsum', '07785383', 100, '3', 0, '1'),
@@ -109,11 +65,6 @@ INSERT INTO `student` (`id`, `emailid`, `sname`, `joindate`, `about`, `contact`,
 (8, 'codeprojectsorg@gmail.com', 'Isabella', '2017-01-03 00:00:00', 'TEST TEST', '8525874545', 20000, '2', 15000, '0'),
 (9, 'codeprojectsorg@gmail.com', 'James Wan', '2018-03-02 00:00:00', 'TEST TEST', '2565452102', 6500, '1', 4000, '0');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `user`
---
 
 CREATE TABLE IF NOT EXISTS `user` (
 `id` int(255) NOT NULL,
@@ -124,65 +75,35 @@ CREATE TABLE IF NOT EXISTS `user` (
   `lastlogin` datetime NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `user`
---
 
 INSERT INTO `user` (`id`, `username`, `password`, `name`, `emailid`, `lastlogin`) VALUES
 (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Lewa', 'lewa@gmail.com', '0000-00-00 00:00:00');
 
---
--- Indexes for dumped tables
---
 
---
--- Indexes for table `branch`
---
 ALTER TABLE `branch`
  ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `fees_transaction`
---
+
 ALTER TABLE `fees_transaction`
  ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `student`
---
+
 ALTER TABLE `student`
  ADD PRIMARY KEY (`id`);
 
---
--- Indexes for table `user`
---
+
 ALTER TABLE `user`
  ADD PRIMARY KEY (`id`);
 
---
--- AUTO_INCREMENT for dumped tables
---
 
---
--- AUTO_INCREMENT for table `branch`
---
 ALTER TABLE `branch`
 MODIFY `id` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `fees_transaction`
---
+
 ALTER TABLE `fees_transaction`
 MODIFY `id` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
---
--- AUTO_INCREMENT for table `student`
---
+
 ALTER TABLE `student`
 MODIFY `id` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
---
--- AUTO_INCREMENT for table `user`
---
+
 ALTER TABLE `user`
 MODIFY `id` int(255) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

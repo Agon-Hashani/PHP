@@ -1,6 +1,4 @@
-﻿/*
-    Common 
-*/
+﻿
 
 .wizard,
 .tabcontrol
@@ -31,7 +29,7 @@
     padding: 0;
 }
 
-/* Accessibility */
+
 .wizard > .steps .current-info,
 .tabcontrol > .steps .current-info
 {
@@ -48,9 +46,7 @@
 
 
 
-/*
-    Wizard
-*/
+
 
 .wizard > .steps
 {
@@ -283,9 +279,7 @@
 
 
 
-/*
-    Tabcontrol
-*/
+
 
 .tabcontrol > .steps
 {
